@@ -1,0 +1,40 @@
+﻿@model UsuarioModel
+
+
+<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+    <ul class="nav navbar-nav flex-grow-1">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Olá, @Model.Nome</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" asp-area="" asp-controller="AlterarSenha" asp-action="Index">Alterar Senha</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" asp-area="" asp-controller="Login" asp-action="Sair">Sair</a>
+            </div>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Página Inicial</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-area="" asp-controller="AlterarSenha" asp-action="Index">Alterar Senha</a>
+        </li>
+        @if (Model.Perfil == Sisteminha.Enums.PerfilEnum.Admin)
+        {
+        <li class="nav-item">
+                <a class="nav-link text-light" asp-area="" asp-controller="Usuario" asp-action="Index">Usuário</a>
+        </li>
+        }
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-area="" asp-controller="Medico" asp-action="Index">Médicos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-area="" asp-controller="Paciente" asp-action="Index">Pacientes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-area="" asp-controller="Consulta" asp-action="Index">Consultas</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-light" asp-area="" asp-controller="Login" asp-action="Sair">Sair</a>
+        </li>
+    </ul>
+</div>

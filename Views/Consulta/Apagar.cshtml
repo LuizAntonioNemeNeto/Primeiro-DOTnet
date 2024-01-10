@@ -1,0 +1,13 @@
+﻿@model ConsultaModel
+@{
+    ViewData["Title"] = "Apagar Consulta";
+}
+
+<div class="text-center">
+    <h3>Realmente Deseja Apagar a Consulta Marcada: (@Model.Marcacao)?</h3>
+</div>
+<br />
+<center>
+    <a class="btn btn-success" role="button" asp-controller="Consulta" asp-action="Excluir" asp-route-id="@Model.Id">Confirmar</a>
+    <a class="btn btn-danger" role="button" asp-controller="Consulta" asp-action="Index">Cancelar</a>
+</center>

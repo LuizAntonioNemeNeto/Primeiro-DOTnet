@@ -1,0 +1,36 @@
+﻿@using Sisteminha.Enums
+@model ConsultaModel
+@{
+    ViewData["Title"] = "Alterar Consulta";
+}
+<h1>Alterar Consultas</h1>
+
+<form asp-controller="Consulta" asp-action="Alterar" method="post">
+    <div class="form-group">
+        <label for="marcacao">Data e Hora</label>
+        <input type="datetime-local" asp-for="Marcacao" class="form-control" placeholder="Informe a Data e Hora da Consulta">
+        @Html.ValidationMessageFor(x => x.Marcacao)
+    </div>
+    <div class="form-group">
+        <label for="retorno">Retorno</label>
+        <select asp-for="Retorno" class="form-control">
+            <option value="">Selecione</option>
+            <option value="@RetornoEnum.Sim">Sim</option>
+            <option value="@RetornoEnum.Nao">Não</option>
+        </select>
+        @Html.ValidationMessageFor(x => x.Retorno)
+    </div>
+    <div class="form-group">
+        <label for="medico">Médico</label>
+        <input type="text" asp-for="MedicoId" class="form-control" placeholder="Digite o Médico">
+        @Html.ValidationMessageFor(x => x.MedicoId)
+    </div>
+    <div class="form-group">
+        <label for="paciente">Paciente</label>
+        <input type="text" asp-for="PacienteId" class="form-control" placeholder="Digite o Paciente">
+        @Html.ValidationMessageFor(x => x.PacienteId)
+    </div>
+    <br>
+    <button type="submit" class="btn btn-primary">Alterar</button>
+    <a class="btn btn-secondary" asp-controller="Consulta" asp-action="Index" role="button">Voltar</a>
+</form>

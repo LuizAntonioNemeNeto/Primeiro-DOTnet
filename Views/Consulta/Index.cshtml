@@ -1,0 +1,73 @@
+﻿@model List<ConsultaModel>
+@{
+    ViewData["Title"] = "Lista de Consultas";
+}
+
+
+<div class="d-grid gap-2 d-md-flex justify-content-md-start">
+    <a class="btn btn btn-outline-primary" role="button" asp-controller="Consulta" asp-action="Criar">Adicionar</a>
+</div>
+<br />
+
+
+@if (TempData["MensagemSucesso"] != null)
+{
+    <Center>
+        <div class="alert alert-success" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
+            @TempData["MensagemSucesso"]
+        </div>
+    </Center>
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <Center>
+        <div class="alert alert-danger" role="alert">
+            <button type="button" class="btn btn-danger btn-sm close-alert" aria-label="Close">X</button>
+            @TempData["MensagemErro"]
+        </div>
+    </Center>
+}
+
+<h1>Listagem de Consultas</h1>
+
+<table class="table table-bordered table-dark" id="table-medico">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col" class="text-center">Dia e Hora</th>
+            <th scope="col" class="text-center">Retorno</th>
+            <th scope="col" class="text-center">Médico</th>
+            <th scope="col" class="text-center">Paciente</th>
+            <th scope="col" class="text-center">Opções</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())//Pergunta se a model não é nula e possui informação dentro
+        {
+            foreach (ConsultaModel consulta in Model)
+            {
+                <tr>
+                    <th scope="row">@consulta.Id</th>
+                    <td>@consulta.Marcacao</td>
+                    <td>@consulta.Retorno</td>
+                    <td>@consulta.Medico.Nome</td>
+                    <td>@consulta.Paciente.Nome</td>
+                    <td>
+                        <center>
+                            <div class="btn-group" role="group">
+                                <a role="button" class="btn btn-warning" asp-route-id="@consulta.Id" asp-controller="Consulta" asp-action="Editar">Editar</a>
+                                <a role="button" class="btn btn-danger" asp-route-id="@consulta.Id" asp-controller="Consulta" asp-action="Apagar">Apagar</a>
+                            </div>
+                        </center>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr class="odd"><td valign="top" colspan="6"><center>Nenhum Médico Encontrado</center></td></tr>
+        }
+    </tbody>
+</table>
