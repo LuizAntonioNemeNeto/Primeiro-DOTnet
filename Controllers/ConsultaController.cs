@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Sisteminha.Filters;
 using Sisteminha.Models;
 using Sisteminha.Repositorys;
@@ -8,11 +9,12 @@ namespace Sisteminha.Controllers
     [PaginaUsuarioLogado]
     public class ConsultaController : Controller
     {
-
+        private readonly IMedicoRepository _medicoRepository;
         private readonly IConsultaRepository _consultaRepository;
-        public ConsultaController(IConsultaRepository consultaRepository)
+        public ConsultaController(IConsultaRepository consultaRepository, IMedicoRepository medicoRepository)
         {
             _consultaRepository = consultaRepository;
+            _medicoRepository = medicoRepository;
         }
         public IActionResult Index()
         {

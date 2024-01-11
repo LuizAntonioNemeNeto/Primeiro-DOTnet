@@ -1,6 +1,7 @@
 ﻿$(document).ready(function () {
     getDatatable('#table-medico');
     getDatatable('#table-paciente');
+    getDatatable('#table-consulta');
 })
 
 function getDatatable(id) {
