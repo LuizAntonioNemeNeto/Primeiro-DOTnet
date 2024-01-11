@@ -135,3 +135,4 @@ C:\Users\Queen\Downloads\Projetos .NET\Sisteminha\obj\Debug\net8.0\Sisteminha.pd
 C:\Users\Queen\Downloads\Projetos .NET\Sisteminha\obj\Debug\net8.0\Sisteminha.genruntimeconfig.cache
 C:\Users\Queen\Downloads\Projetos .NET\Sisteminha\obj\Debug\net8.0\ref\Sisteminha.dll
 C:\Users\Queen\Downloads\Projetos .NET\Sisteminha\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Queen\Downloads\Projetos .NET\Sisteminha\obj\Debug\net8.0\Sisteminha.sourcelink.json
