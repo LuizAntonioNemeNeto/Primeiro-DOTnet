@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Sisteminha.Data;
 using Sisteminha.Filters;
 using Sisteminha.Models;
 using Sisteminha.Repositorys;
@@ -11,10 +12,12 @@ namespace Sisteminha.Controllers
     {
         private readonly IMedicoRepository _medicoRepository;
         private readonly IConsultaRepository _consultaRepository;
-        public ConsultaController(IConsultaRepository consultaRepository, IMedicoRepository medicoRepository)
+        private readonly IPacienteRepository _pacienteRepository;
+        public ConsultaController(IConsultaRepository consultaRepository, IMedicoRepository medicoRepository, IPacienteRepository pacienteRepository)
         {
             _consultaRepository = consultaRepository;
             _medicoRepository = medicoRepository;
+            _pacienteRepository = pacienteRepository;
         }
         public IActionResult Index()
         {
@@ -23,6 +26,10 @@ namespace Sisteminha.Controllers
         }
         public IActionResult Criar()
         {
+            var med = _medicoRepository.BuscarTodos().ToList();
+            var pac = _pacienteRepository.BuscarTodos().ToList();
+            ViewBag.Medicos = new SelectList(med, "Id", "Nome");
+            ViewBag.Pacientes = new SelectList(pac, "Id", "Nome");
             return View();
         }
         public IActionResult Editar(int id)

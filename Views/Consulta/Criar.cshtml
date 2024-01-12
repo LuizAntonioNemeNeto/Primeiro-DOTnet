@@ -21,20 +21,16 @@
         @Html.ValidationMessageFor(x => x.Retorno)
     </div>
     <div class="form-group">
-        <label asp-for="MedicoId" class="control-label"></label>
-        <select asp-for="MedicoId" class="form-control" asp-items="ViewBag.Medico"></select>
+        <label asp-for="MedicoId" class="control-label">Médico</label>
+        <select asp-for="MedicoId" class="form-control" asp-items="ViewBag.Medicos"></select>
         @Html.ValidationMessageFor(x => x.MedicoId)
     </div>
     <div class="form-group">
-        <label for="medico">Médico</label>
-        <input type="text" asp-for="MedicoId" class="form-control" placeholder="Digite o Médico">
-        @Html.ValidationMessageFor(x => x.MedicoId)
-    </div>
-    <div class="form-group">
-        <label for="paciente">Paciente</label>
-        <input type="text" asp-for="PacienteId" class="form-control" placeholder="Digite o Paciente">
+        <label asp-for="PacienteId" class="control-label">Paciente</label>
+        <select asp-for="PacienteId" class="form-control" asp-items="ViewBag.Pacientes"></select>
         @Html.ValidationMessageFor(x => x.PacienteId)
     </div>
+
     <br>
     <button type="submit" class="btn btn-primary">Adicionar</button>
     <a class="btn btn-secondary" asp-controller="Consulta" asp-action="Index" role="button">Voltar</a>
