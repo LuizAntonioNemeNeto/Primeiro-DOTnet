@@ -35,6 +35,10 @@ namespace Sisteminha.Controllers
         public IActionResult Editar(int id)
         {
             ConsultaModel consulta = _consultaRepository.ListarPorId(id);
+            var med = _medicoRepository.BuscarTodos().ToList();
+            var pac = _pacienteRepository.BuscarTodos().ToList();
+            ViewBag.Medicos = new SelectList(med, "Id", "Nome");
+            ViewBag.Pacientes = new SelectList(pac, "Id", "Nome");
             return View(consulta);
         }
         public IActionResult Apagar(int id)
@@ -97,7 +101,6 @@ namespace Sisteminha.Controllers
             {
                 if (ModelState.IsValid)
                 {
-
                     _consultaRepository.Atualizar(consulta);
                     TempData["MensagemSucesso"] = "Consulta Alterado com Sucesso";
                     return RedirectToAction("Index");

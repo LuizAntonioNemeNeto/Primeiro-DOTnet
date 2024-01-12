@@ -30,7 +30,6 @@
         <select asp-for="PacienteId" class="form-control" asp-items="ViewBag.Pacientes"></select>
         @Html.ValidationMessageFor(x => x.PacienteId)
     </div>
-
     <br>
     <button type="submit" class="btn btn-primary">Adicionar</button>
     <a class="btn btn-secondary" asp-controller="Consulta" asp-action="Index" role="button">Voltar</a>
