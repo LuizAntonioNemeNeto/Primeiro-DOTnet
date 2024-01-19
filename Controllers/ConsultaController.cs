@@ -105,6 +105,7 @@ namespace Sisteminha.Controllers
                     TempData["MensagemSucesso"] = "Consulta Alterado com Sucesso";
                     return RedirectToAction("Index");
                 }
+
                 return View("Editar", consulta);
             }
             catch (Exception erro)

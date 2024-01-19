@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Sisteminha.Data;
 using Sisteminha.Models;
@@ -23,6 +24,7 @@ namespace Sisteminha.Repositorys
         public ConsultaModel Atualizar(ConsultaModel consulta)
         {
             ConsultaModel consultaDB = ListarPorId(consulta.Id);
+            
             if (consultaDB == null)
             {
                 throw new System.Exception("Erro na Atualização da Consulta");
