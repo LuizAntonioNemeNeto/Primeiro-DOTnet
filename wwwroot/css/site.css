@@ -47,3 +47,7 @@ body {
         height: 100%;
     }
 }
+
+.drop:hover{
+    background-color:dodgerblue !important;
+}
