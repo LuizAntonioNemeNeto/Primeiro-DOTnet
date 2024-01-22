@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "c70+e/IC7Bh2hu1EUiDIr0d/B4M/cGTaMaCSbDY6sr4=",
+  "Hash": "3ecDhpHvSlWHKfXELxlWUdK/H1wy8CNMJIhBwExO17Y=",
   "Source": "Sisteminha",
   "BasePath": "_content/Sisteminha",
   "Mode": "Default",
@@ -91,6 +91,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\Queen\\Downloads\\Projetos .NET\\Sisteminha\\wwwroot\\images\\logo.png",
+      "SourceId": "Sisteminha",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Queen\\Downloads\\Projetos .NET\\Sisteminha\\wwwroot\\",
+      "BasePath": "_content/Sisteminha",
+      "RelativePath": "images/logo.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\logo.png"
     },
     {
       "Identity": "C:\\Users\\Queen\\Downloads\\Projetos .NET\\Sisteminha\\wwwroot\\js\\site.js",
