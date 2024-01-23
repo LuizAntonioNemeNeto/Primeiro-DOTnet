@@ -62,6 +62,7 @@ namespace Sisteminha.Repositorys
 
         public ConsultaModel ListarPorId(int id)
         {
+            //return _bancoContext.Consultas.Where(x => x.Id == id).Include(x => x.Medico).Include(x => x.Paciente).FirstOrDefault();
             return _bancoContext.Consultas.FirstOrDefault(x => x.Id == id);
         }
     }

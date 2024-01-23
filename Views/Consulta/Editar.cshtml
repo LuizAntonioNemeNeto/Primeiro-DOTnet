@@ -6,6 +6,7 @@
 <h1>Alterar Consultas</h1>
 
 <form asp-controller="Consulta" asp-action="Alterar" method="post">
+    <input type="hidden" asp-for="Id" />
     <div class="form-group">
         <label for="marcacao">Data e Hora</label>
         <input type="datetime-local" asp-for="Marcacao" class="form-control" placeholder="Informe a Data e Hora da Consulta">
