@@ -2,6 +2,20 @@
     getDatatable('#table-medico');
     getDatatable('#table-paciente');
     getDatatable('#table-consulta');
+
+    //Modal
+    $('.btn-total-medicos').click(function () {
+        var medicoId = $(this).attr('medico-id');
+        $.ajax({
+            type: 'GET',
+            url: '/Medico/ListarConsultasPorMedicoId/' + medicoId,
+            success: function (result) {
+                $('#listaConsultaMedico').html(result);
+                $('#modalConsultaMedico').modal('show');
+                getDatatable('#table-consulta-medico');
+            }
+        });
+    });
 })
 
 function getDatatable(id) {
@@ -40,3 +54,4 @@ $(function () {
 $('.close-alert').click(function () {
     $('.alert').hide('hide');
 });
+

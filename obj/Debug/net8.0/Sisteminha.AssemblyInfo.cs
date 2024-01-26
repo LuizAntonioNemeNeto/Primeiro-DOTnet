@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Sisteminha")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+84e29fc15b3a7beebcefc4a8a60eeda78d340fb5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a874129894ba6b2cb513c1e0b90ae7bb5be8cc2")]
 [assembly: System.Reflection.AssemblyProductAttribute("Sisteminha")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Sisteminha")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

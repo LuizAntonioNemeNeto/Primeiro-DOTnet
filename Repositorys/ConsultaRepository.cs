@@ -47,6 +47,16 @@ namespace Sisteminha.Repositorys
             return _bancoContext.Consultas.Include(x => x.Medico).Include(x => x.Paciente).ToList();
         }
 
+        public List<ConsultaModel> BuscarTodosMedicos(int medicoId)
+        {
+            return _bancoContext.Consultas.Where(x => x.MedicoId == medicoId).Include(x => x.Paciente).ToList();
+        }
+
+        public List<ConsultaModel> BuscarTodosPacientes(int pacienteId)
+        {
+            return _bancoContext.Consultas.Where(x => x.PacienteId == pacienteId).Include(x => x.Medico).ToList();
+        }
+
         public bool Excluir(int id)
         {
             ConsultaModel consultaDB = ListarPorId(id);

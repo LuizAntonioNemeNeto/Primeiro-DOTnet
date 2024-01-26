@@ -9,9 +9,12 @@ namespace Sisteminha.Controllers
     public class MedicoController : Controller
     {
         private readonly IMedicoRepository _medicoRepository;
-        public MedicoController(IMedicoRepository medicoRepository)
+        private readonly IConsultaRepository _consultaRepository;
+        public MedicoController(IMedicoRepository medicoRepository, IConsultaRepository consultaRepository)
         {
             _medicoRepository = medicoRepository;
+            _consultaRepository = consultaRepository;
+
         }
         public IActionResult Index()
         {
@@ -55,6 +58,12 @@ namespace Sisteminha.Controllers
                 return RedirectToAction("Index");
             }
 
+        }
+
+        public IActionResult ListarConsultasPorMedicoId(int id)
+        {
+            List<ConsultaModel> consultas = _consultaRepository.BuscarTodosMedicos(id);
+            return PartialView("_ConsultaMedico", consultas);
         }
 
         [HttpPost]

@@ -24,21 +24,22 @@ namespace Sisteminha.Controllers
             List<ConsultaModel> consultas = _consultaRepository.BuscarTodos();
             return View(consultas);
         }
-        public IActionResult Criar()
+        private void ViewBags()
         {
             var med = _medicoRepository.BuscarTodos().ToList();
             var pac = _pacienteRepository.BuscarTodos().ToList();
             ViewBag.Medicos = new SelectList(med, "Id", "Nome");
             ViewBag.Pacientes = new SelectList(pac, "Id", "Nome");
+        }
+        public IActionResult Criar()
+        {
+            ViewBags();
             return View();
         }
         public IActionResult Editar(int id)
         {
             ConsultaModel consulta = _consultaRepository.ListarPorId(id);
-            var med = _medicoRepository.BuscarTodos().ToList();
-            var pac = _pacienteRepository.BuscarTodos().ToList();
-            ViewBag.Medicos = new SelectList(med, "Id", "Nome");
-            ViewBag.Pacientes = new SelectList(pac, "Id", "Nome");
+            ViewBags();
             return View(consulta);
         }
         public IActionResult Apagar(int id)
@@ -83,6 +84,7 @@ namespace Sisteminha.Controllers
                     TempData["MensagemSucesso"] = "Consulta Cadastrado com Sucesso";
                     return RedirectToAction("Index");
                 }
+                ViewBags();
                 return View(consulta);
             }
             catch (Exception erro)
@@ -105,7 +107,7 @@ namespace Sisteminha.Controllers
                     TempData["MensagemSucesso"] = "Consulta Alterado com Sucesso";
                     return RedirectToAction("Index");
                 }
-
+                ViewBags();
                 return View("Editar", consulta);
             }
             catch (Exception erro)

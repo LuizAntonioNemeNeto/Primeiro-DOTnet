@@ -1,0 +1,30 @@
+﻿@model List<ConsultaModel>
+
+<table id="table-consulta-medico" class="display" style="width:100%">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Dia e Hora</th>
+            <th scope="col">Retorno</th>
+            <th scope="col">Paciente</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var consulta in Model)
+            {
+                <tr>
+                    <th scope="row">@consulta.Id</th>
+                    <td>@consulta.Marcacao</td>
+                    <td>@consulta.Retorno</td>
+                    <td>@consulta.Paciente.Nome</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr class="odd"><td valign="top" colspan="3"><center>Nenhuma Consulta Encontrado</center></td></tr>
+        }
+    </tbody>
+</table>
